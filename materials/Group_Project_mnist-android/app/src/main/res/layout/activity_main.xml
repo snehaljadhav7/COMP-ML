@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Phone Number Dialer"
+        app:titleTextColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/phone_number_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:singleLine="true"
+        android:textColor="#212121"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toTopOf="@id/guess_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="603 56 795" />
+
+    <LinearLayout
+        android:id="@+id/guess_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/stroked_background"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/draw_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/guess_1"
+            style="@style/PromptTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="1" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#828282" />
+
+        <TextView
+            android:id="@+id/guess_2"
+            style="@style/PromptTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="2" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#828282" />
+
+        <TextView
+            android:id="@+id/guess_3"
+            style="@style/PromptTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="3" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/stroked_background"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.byox.drawview.views.DrawView
+        android:id="@+id/draw_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="1px"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        app:dv_draw_alpha="255"
+        app:dv_draw_anti_alias="true"
+        app:dv_draw_color="@android:color/black"
+        app:dv_draw_corners="round"
+        app:dv_draw_dither="true"
+        app:dv_draw_enable_zoom="false"
+        app:dv_draw_font_family="default_font"
+        app:dv_draw_font_size="12"
+        app:dv_draw_mode="draw"
+        app:dv_draw_style="stroke"
+        app:dv_draw_tool="pen"
+        app:dv_draw_width="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
